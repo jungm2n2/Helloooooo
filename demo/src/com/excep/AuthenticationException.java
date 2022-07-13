@@ -1,0 +1,18 @@
+package com.excep;
+
+public class AuthenticationException extends Exception{
+
+	private static final long serialVersionUID = 1L;
+	
+	public AuthenticationException(String message) { //»ý¼ºÀÚ
+		super(message);
+		
+	}
+	
+	
+	
+	
+	
+	
+
+}

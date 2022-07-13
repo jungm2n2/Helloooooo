@@ -16,7 +16,7 @@ public class Test2 {
 		
 		n=0;
 		
-		while(n<6) {
+		while(n<6) {//중복이 나오면 다시 돌려야 하기 때문에 몇번 돌릴지 몰라서 for문이 아니라 while문 사용
 			
 			num[n] = rd.nextInt(45)+1;
 			

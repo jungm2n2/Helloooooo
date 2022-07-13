@@ -11,7 +11,7 @@ public class Test5 {
 		
 		
 		//jumin : 900110-2053126
-		//index : 1234567890123
+		//index : 01234567890123
 		//chk   : 234567 892345
 		
 		//합=(9*2)+(0*3)+...+(2*5)
@@ -30,7 +30,7 @@ public class Test5 {
 		
 		if(jumin.length()!=14) {
 			System.out.println("입력 오류!!");
-			return; //stop = 프로그램 종료
+			return; //stop = 프로그램 종료. 메인 메소드를 빠져나옴.
 		
 		}
 		
@@ -77,7 +77,7 @@ public class Test5 {
 		String str = "seoul korea";
 		//index :     01234567890 
 		
-		System.out.println(str.substring(0,3));//0번째~3번째 index 출력
+		System.out.println(str.substring(0,3));//0번째~(3-1)번째 index 출력
 		System.out.println(str.substring(6,8));
 		System.out.println(str.substring(6)); //6번째 index 부터 끝까지 출력
 		

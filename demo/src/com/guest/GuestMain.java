@@ -2,11 +2,15 @@ package com.guest;
 
 import java.util.Scanner;
 
+import com.db.DBConn;
+
 public class GuestMain {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int ch;
+		Guest ob = new Guest();
+		
 		
 		while(true) {
 			
@@ -18,11 +22,14 @@ public class GuestMain {
 			
 			
 			switch (ch) {
-			case 1 :
-			case 2 :
-			case 3 :
-			case 4 :
+			case 1 :ob.write();break;
+			case 2 :ob.search();break;
+			case 3 :ob.update();break;
+			case 4 :ob.delete();break;
 			case 5 :
+				System.out.println("프로그램을 종료합니다");
+				DBConn.close();
+				System.exit(0);
 			
 			}
 			

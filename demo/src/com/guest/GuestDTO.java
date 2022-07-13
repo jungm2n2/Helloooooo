@@ -7,6 +7,7 @@ public class GuestDTO {
 	String name;
 	String content;
 	String created;
+	
 	public String getId() {
 		return id;
 	}
@@ -38,6 +39,15 @@ public class GuestDTO {
 		this.created = created;
 	}
 	
+	@Override
+	public String toString() {
+		String str;
+		
+		str = String.format("%4s %10s %10s", id,content,created);
+		
+		return str;
+		
+	} 
 	
 	
 	

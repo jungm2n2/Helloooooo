@@ -12,10 +12,7 @@ import com.db.DBConn;
 
 import oracle.jdbc.OracleTypes;
 
-public class ScoreDAO {//Data Access Object --DB에 insert
-	
-	
-	//DB에 추가 (insert)
+public class ScoreDAO {
 	
 	public int insertData(ScoreDTO dto) {
 		

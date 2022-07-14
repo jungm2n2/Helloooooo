@@ -43,7 +43,7 @@ public class GuestDTO {
 	public String toString() {
 		String str;
 		
-		str = String.format("%4s %10s %10s", id,content,created);
+		str = String.format("%4s %5s %10s", id,content,created);
 		
 		return str;
 		

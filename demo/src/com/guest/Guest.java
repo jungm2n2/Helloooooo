@@ -16,64 +16,117 @@ public class Guest {
 	public void write() {
 		
 		GuestDTO dto = new GuestDTO();
+		System.out.println("---------로그인을 해주세요-------");
+		System.out.println("아이디를 입력하세요");
+		String id = sc.next();
+		System.out.println("비밀번호를 입력하세요");
+		String pw = sc.next();
 		
+		dto = dao.getLists(id,pw);
 		
-		
-		if(!check())
+		if(dto!=null) {
+			System.out.println("아이디 확인 완료!");
 			
-		System.out.println("방명록을 입력하세요(100자 이내)");
-		dto.setContent(sc.next());
-		
-		int result = dao.insertData(dto);
-		
-		if (result==1)
-			System.out.println("등록 완료!");
-		else
-			System.out.println("등록 실패!");
-		
+			System.out.println("방명록을 입력하세요(100자 이내)");
+			dto.setContent(sc.next());
+			
+			int result = dao.insertData(dto);
+			
+			if (result==1)
+				System.out.println("등록 완료!");
+			else {
+				System.out.println("이미 등록하셨습니다.");
+				System.out.println("등록 실패!");
+			}
+		}else
+			System.out.println("로그인 실패!");
 	}
 	
 	
 	//조회
 	public void search() {
 		
-	
-		System.out.print("아이디를 입력하세요");
+		System.out.println("---------로그인을 해주세요-------");
+		System.out.println("아이디를 입력하세요");
 		String id = sc.next();
+		System.out.println("비밀번호를 입력하세요");
+		String pw = sc.next();
 		
-		GuestDTO dto = dao.getList(id);
+		GuestDTO dto = dao.getLists(id,pw);
 		
-		if(dto!=null) 
-			System.out.println(dto.toString());
-		else
-			System.out.println("존재하는 아이디가 없습니다.");
-			
-		
-		
-		
+		if(dto!=null) {
+			System.out.println("아이디 확인 완료!");
+			GuestDTO dto1 = dao.getList(dto);
+			if(dto1!=null) {
+			System.out.println(dto1.toString());
+			}
+		}else
+			System.out.println("로그인 실패!");
 		
 	}
+	
+	
+	//전체조회
+	
+	public void printAll() {
 		
-
+		System.out.println("---------로그인을 해주세요-------");
+		System.out.println("아이디를 입력하세요");
+		String id = sc.next();
+		System.out.println("비밀번호를 입력하세요");
+		String pw = sc.next();
+		
+		GuestDTO dto = dao.getLists(id,pw);
+	
+			if(dto==null) {
+				System.out.println("로그인 실패!");
+			}else {
+				System.out.println("아이디 확인 완료!");
+				
+				List<GuestDTO> lists = dao.getList3(dto);
+				
+				Iterator<GuestDTO> it = lists.iterator();
+				
+				while(it.hasNext()) {
+				
+					GuestDTO dto1 = it.next();
+				
+						System.out.println(dto1.toString());
+				
+			}
+	}		
+	}
 	//수정
 	
 	public void update() {
 		
 		GuestDTO dto = new GuestDTO();
-		
+		System.out.println("---------로그인을 해주세요-------");
 		System.out.println("아이디를 입력하세요");
-		dto.setId(sc.next());
+		String id = sc.next();
+		System.out.println("비밀번호를 입력하세요");
+		String pw = sc.next();
 		
-		System.out.print("방명록을 수정하세요");
-		dto.setContent(sc.next());
+		dto = dao.getLists(id,pw);
 		
-		int result = dao.updateData(dto);
-		
-		if(result!=0) {
-			System.out.println("수정 성공!!");
+		if(dto!=null) { 
+			System.out.println("아이디 확인 완료!");
+			System.out.println("방명록을 수정하세요");
+			dto.setContent(sc.next());
+			
+			int result = dao.updateData(dto);
+			
+			if(result!=0) {
+				System.out.println("수정 성공!!");
+			}else {
+				System.out.println("수정 실패!!");
+			}
+			
 		}else {
-			System.out.println("수정 실패!!");
+			System.out.println("로그인 실패!");
 		}
+		
+		
 		
 		
 		
@@ -85,59 +138,49 @@ public class Guest {
 		
 		
 		GuestDTO dto = new GuestDTO();
-		
-		System.out.println("아이디를 입력하세요");
-		dto.setId(sc.next());
-		
-		int result = dao.deleteData(dto);
-		
-		if(result!=0) {
-			System.out.println("삭제 성공!!");
-		}else {
-			System.out.println("삭제 실패!!");
-		}
-	}
-	
-	
-	//반복 출력하는 메소드 따로 빼기
-	public void print() { 
-		
-		Iterator<GuestDTO> it = lists.iterator();
-		
-		
-		while(it.hasNext()) {
-		
-			GuestDTO dto = it.next();
-		
-	}
-	}
-	
-	public boolean check() {
-		
-	
-			
-		System.out.println("아이디를 입력하세요");
+		System.out.println("---------로그인을 해주세요-------");
+		System.out.print("아이디를 입력하세요");
 		String id = sc.next();
-		GuestDTO dto = dao.getLists(id);
-		
-		if(dto==null) {
-			System.out.println("입력하신 아이디가 존재하지 않습니다");
-			return false;
-			
-		}System.out.println("아이디 확인 완료");
-		
 		System.out.println("비밀번호를 입력하세요");
 		String pw = sc.next();
 		
-		if(!dto.getPwd().equals(pw)) {
-			System.out.println("비밀번호가 일치하지 않습니다");
-			return false;
-		}
-		return true;
+		dto = dao.getLists(id,pw);
+		
+		
+		
+		if(dto!=null) {
+			System.out.println("아이디 확인 완료!");
+			int result = dao.deleteData(dto);
+				if (result==1) {
+					System.out.println("삭제 성공!!");
+				}	else {
+				System.out.println("삭제 실패! 삭제할 데이터가 없습니다!!");
+				}
+		}else
+			System.out.println("로그인 실패!");
+	
+	
+	
+/*	
+	public void check() {
+		
+	
+		GuestDTO dto = new GuestDTO();
+		System.out.println("---------로그인을 해주세요-------");
+		System.out.println("아이디를 입력하세요");
+		String id = sc.next();
+		System.out.println("비밀번호를 입력하세요");
+		String pw = sc.next();
+		
+		dto = dao.getLists(id,pw);
+		
+		
 		
 		
 		
 		
 	}
-
+	
+	*/
+	}
 }

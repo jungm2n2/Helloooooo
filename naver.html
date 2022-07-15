@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NAVER</title>
+
+<script type="text/javascript">
+
+	function go(){
+
+		window.open("naver_1.html",
+				"width=300,height=300,status=yes,top=100,left=100");
+	};
+	
+	function go1(){
+		//alert("ㅎㅇㅎㅇ");
+		window.opener.location.assign("naver_1.html")
+	};
+
+	
+	function getNumber(){
+		
+		alert("인증번호 받기");
+		
+	};
+	
+		
+
+</script>
+
+
+
+</head>
+
+
+<body>
+
+<form action="" name="myForm">
+<center>
+<table>
+
+<tr><td><img src="./image/naver.png" name="img"><td></tr>
+
+
+<tr>
+<td>아이디<br/>
+<input type="text" style="height:30px" size="40" name="id"/></td>
+</tr>
+
+<tr>
+<td>비밀번호<br/>
+<input type="text" size="40" name="pw"/></td>
+</tr>
+
+<tr>
+<td>비밀번호 재확인<br/>
+<input type="text" size="40" name="id"/></td>
+</tr>
+
+<tr>
+<td>이름<br/>
+<input type="text" size="40" name="pw"/></td>
+</tr>
+
+<tr>
+<td>생년월일<br/>
+<input type="text" size="14" name="id"/>
+
+<select name="monthSel" style="height:50px; width:100px" onchange="monthCheck();">
+<option value="">월</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+
+</select>
+<input type="text" style="width: 300; height: 300;" name="pw"/></td>
+</tr>
+
+<tr>
+<td>성별<br/>
+<select name="genSel">
+<option value="">성별</option>
+<option value="1">남자</option>
+<option value="2">여자</option>
+<option value="3">선택안함</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>본인 확인 이메일 (선택)<br/>
+<input type="text" size="40" name="pw"/></td>
+</tr>
+
+
+<tr>
+	<td>휴대전화<br/>
+<select name="numSel">
+<option value="">대한민국 +82</option>
+<option value="1">미국/캐나다 +1</option></select><br/>
+	
+
+	<input type="text" size="20" name="pw" style="float: left; margin-right: 10px " />
+	
+	<a href="javascript:getNumber();">
+	<img src="./image/bring_number.png" style="float: left;"><br/></a>
+	
+	<input type="text" size="40" name="pw"/></td>
+</tr>
+
+<tr>
+<td>
+<a href="javascript:getNumber();">
+<img src="./image/joinup.png"  name="img"></a>
+</td></tr>
+
+<tr>
+<td>
+
+<a href="https://policy.naver.com/rules/service.html">개인정보처리방침</a>
+<a href="https://policy.naver.com/policy/privacy.html">책임의 한계와 법적고지</a>
+<a href="https://policy.naver.com/rules/disclaimer.html">회원정보 고객센터</a><br/>
+</td>
+</tr>
+<tr><td><a href="https://www.navercorp.com/">© NAVER Corp.</a></td></tr>
+
+<tr>
+<td>
+<a href="javascript:go1()">눌러보세용</a></center>
+</td>
+</tr>
+
+</table>
+</center>
+</form>
+
+
+</body>
+
+
+</html>
